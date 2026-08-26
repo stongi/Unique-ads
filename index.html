@@ -69,7 +69,19 @@
     height:72px;
   }
   .brand{display:flex; align-items:center; gap:10px;}
-  .brand img{height:36px; width:auto;}
+  .brand-word{
+    font-family:'Bricolage Grotesque', sans-serif;
+    font-weight:700;
+    font-size:21px;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+  }
+  .brand-word span{
+    background:linear-gradient(100deg, var(--grad-a), var(--grad-b));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
   .nav-links{display:flex; align-items:center; gap:32px; font-size:14px; font-weight:500;}
   .nav-links a{color:var(--ink-soft); transition:color .2s;}
   .nav-links a:hover{color:var(--ink);}
@@ -298,7 +310,7 @@
     flex-wrap:wrap; gap:16px;
   }
   .footer-brand{display:flex; align-items:center; gap:10px; font-size:13px; color:var(--ink-soft);}
-  .footer-brand img{height:22px;}
+  .footer-brand .brand-word{font-size:16px;}
   .footer-tagline{font-size:13px; color:var(--accent-red); font-weight:700;}
 
   /* REVEAL ANIM */
@@ -332,7 +344,7 @@
 <nav>
   <div class="wrap">
     <a class="brand" href="#top">
-      <img src="logo.png" alt="Unique Ads">
+      <span class="brand-word">Unique<span> Ads</span></span>
     </a>
     <div class="nav-links">
       <a href="#servicos">Serviços</a>
@@ -368,7 +380,7 @@
         </defs>
         <path d="M 20 320 C 100 280, 60 180, 160 160 S 300 60, 380 40"/>
       </svg>
-      <img src="logo.png" alt="Unique Ads — beija-flor" style="background:none;">
+      <img src="logo-transparent.png" alt="Unique Ads — beija-flor">
     </div>
   </div>
 </header>
@@ -524,8 +536,8 @@
 <footer>
   <div class="wrap">
     <div class="footer-brand">
-      <img src="logo.png" alt="Unique Ads">
-      <span>© 2026 Unique Ads · Lagos, Portugal</span>
+      <span class="brand-word">Unique<span> Ads</span></span>
+      <span>· © 2026 · Lagos, Portugal</span>
     </div>
     <div class="footer-tagline">Seu crescimento começa aqui.</div>
   </div>
