@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unique Ads — Gestão de Tráfego Digital em Lagos, Algarve</title>
+<meta name="description" content="Gestão de campanhas Facebook, Instagram e Google Search para negócios em Portugal. O seu crescimento começa aqui.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #F7F6FA;
+    --bg-alt: #FFFFFF;
+    --ink: #262429;
+    --ink-soft: #6B6873;
+    --grad-a: #F472B6;
+    --grad-b: #9333EA;
+    --accent-red: #E8384F;
+    --line: rgba(38,36,41,0.10);
+    --radius: 18px;
+    --max: 1180px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter', sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Bricolage Grotesque', sans-serif;
+    font-weight:700;
+    letter-spacing:-0.02em;
+    line-height:1.08;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    font-weight:500;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--grad-b);
+    display:inline-block;
+    margin-bottom:14px;
+  }
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+
+  .grad-text{
+    background:linear-gradient(100deg, var(--grad-a), var(--grad-b));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+
+  /* NAV */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(247,246,250,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:72px;
+  }
+  .brand{display:flex; align-items:center; gap:10px;}
+  .brand img{height:36px; width:auto;}
+  .nav-links{display:flex; align-items:center; gap:32px; font-size:14px; font-weight:500;}
+  .nav-links a{color:var(--ink-soft); transition:color .2s;}
+  .nav-links a:hover{color:var(--ink);}
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:12px 22px; border-radius:999px;
+    font-weight:600; font-size:14px;
+    cursor:pointer; border:1px solid transparent;
+    transition:transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+    white-space:nowrap;
+  }
+  .btn:active{transform:scale(0.97);}
+  .btn-primary{
+    background:linear-gradient(100deg, var(--grad-a), var(--grad-b));
+    color:#fff;
+    box-shadow:0 8px 20px -6px rgba(147,51,234,0.5);
+  }
+  .btn-primary:hover{box-shadow:0 10px 26px -6px rgba(147,51,234,0.65); transform:translateY(-1px);}
+  .btn-ghost{
+    border-color:var(--line);
+    color:var(--ink);
+    background:var(--bg-alt);
+  }
+  .btn-ghost:hover{border-color:var(--grad-b); color:var(--grad-b);}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    padding:88px 0 60px;
+    overflow:hidden;
+  }
+  .hero .wrap{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:48px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(38px, 5vw, 60px);
+    margin-bottom:22px;
+  }
+  .hero p.lead{
+    font-size:18px;
+    color:var(--ink-soft);
+    max-width:480px;
+    margin-bottom:32px;
+  }
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:16px;}
+  .trust-line{font-size:13px; color:var(--ink-soft);}
+  .trust-line svg{vertical-align:-2px; margin-right:5px;}
+
+  .hero-visual{
+    position:relative;
+    display:flex; align-items:center; justify-content:center;
+    min-height:380px;
+  }
+  .hero-visual img{
+    width:min(420px, 90%);
+    filter:drop-shadow(0 24px 40px rgba(147,51,234,0.18));
+    animation:float 6s ease-in-out infinite;
+  }
+  @keyframes float{
+    0%,100%{transform:translateY(0px);}
+    50%{transform:translateY(-14px);}
+  }
+  .flight-path{
+    position:absolute; inset:0; width:100%; height:100%;
+    pointer-events:none;
+  }
+  .flight-path path{
+    fill:none;
+    stroke:url(#pathGrad);
+    stroke-width:1.4;
+    stroke-linecap:round;
+    stroke-dasharray:6 10;
+    opacity:0.5;
+  }
+
+  /* SECTION SHELL */
+  section{padding:88px 0;}
+  .section-head{max-width:640px; margin-bottom:56px;}
+  .section-head h2{font-size:clamp(28px,3.4vw,40px);}
+
+  /* SERVICES */
+  .services-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:24px;
+  }
+  .service-card{
+    background:var(--bg-alt);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:32px 28px;
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .service-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 20px 40px -20px rgba(38,36,41,0.18);
+    border-color:transparent;
+  }
+  .service-icon{
+    width:44px; height:44px;
+    border-radius:12px;
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:20px;
+    background:linear-gradient(135deg, var(--grad-a), var(--grad-b));
+  }
+  .service-icon svg{width:22px; height:22px; stroke:#fff;}
+  .service-card h3{font-size:19px; margin-bottom:10px; font-weight:700;}
+  .service-card p{font-size:14.5px; color:var(--ink-soft);}
+
+  /* PROCESS */
+  .process{
+    position:relative;
+  }
+  .process-track{
+    position:relative;
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:24px;
+  }
+  .process-track::before{
+    content:'';
+    position:absolute;
+    top:22px; left:0; right:0;
+    height:1px;
+    background:repeating-linear-gradient(90deg, var(--grad-b) 0 8px, transparent 8px 16px);
+    opacity:0.4;
+    z-index:0;
+  }
+  .step{position:relative; z-index:1;}
+  .step-num{
+    width:44px; height:44px;
+    border-radius:50%;
+    background:var(--bg-alt);
+    border:1.5px solid var(--grad-b);
+    color:var(--grad-b);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:14px; font-weight:500;
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:18px;
+  }
+  .step h3{font-size:17px; margin-bottom:8px;}
+  .step p{font-size:14px; color:var(--ink-soft);}
+
+  /* PARA QUEM */
+  .tag-cloud{
+    display:flex; flex-wrap:wrap; gap:12px;
+  }
+  .tag{
+    padding:11px 20px;
+    border-radius:999px;
+    border:1px solid var(--line);
+    background:var(--bg-alt);
+    font-size:14.5px; font-weight:500;
+    transition:border-color .2s, transform .2s;
+  }
+  .tag:hover{
+    border-color:transparent;
+    background:linear-gradient(100deg, var(--grad-a), var(--grad-b));
+    color:#fff;
+    transform:translateY(-2px);
+  }
+
+  /* CONTACT */
+  .contact-shell{
+    background:var(--ink);
+    border-radius:28px;
+    padding:64px;
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+  }
+  .contact-shell::after{
+    content:'';
+    position:absolute;
+    width:480px; height:480px;
+    right:-160px; top:-200px;
+    background:radial-gradient(circle, var(--grad-b), transparent 70%);
+    opacity:0.35;
+    pointer-events:none;
+  }
+  .contact-grid{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:56px;
+    position:relative; z-index:1;
+  }
+  .contact-shell h2{color:#fff;}
+  .contact-shell .eyebrow{color:#F472B6;}
+  .contact-info p{color:rgba(255,255,255,0.65); font-size:15px; margin-top:16px; max-width:360px;}
+  .contact-detail{margin-top:32px; font-size:14px;}
+  .contact-detail div{margin-bottom:10px; color:rgba(255,255,255,0.85);}
+  .contact-detail span{color:rgba(255,255,255,0.5); font-family:'IBM Plex Mono', monospace; font-size:12px; display:block; margin-bottom:2px;}
+
+  form{display:grid; gap:16px;}
+  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  label{font-size:13px; font-weight:500; color:rgba(255,255,255,0.8); margin-bottom:6px; display:block;}
+  input, select, textarea{
+    width:100%;
+    padding:13px 15px;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.16);
+    background:rgba(255,255,255,0.06);
+    color:#fff;
+    font-family:'Inter', sans-serif;
+    font-size:14.5px;
+  }
+  input::placeholder, textarea::placeholder{color:rgba(255,255,255,0.35);}
+  input:focus, select:focus, textarea:focus{
+    outline:none;
+    border-color:var(--grad-a);
+    background:rgba(255,255,255,0.09);
+  }
+  textarea{min-height:96px; resize:vertical;}
+  select{color-scheme:dark;}
+  .form-submit{margin-top:6px;}
+  .form-note{font-size:12.5px; color:rgba(255,255,255,0.4); margin-top:4px;}
+  .honeypot{position:absolute; left:-9999px; opacity:0; height:0;}
+
+  /* FOOTER */
+  footer{padding:40px 0 60px;}
+  footer .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    flex-wrap:wrap; gap:16px;
+  }
+  .footer-brand{display:flex; align-items:center; gap:10px; font-size:13px; color:var(--ink-soft);}
+  .footer-brand img{height:22px;}
+  .footer-tagline{font-size:13px; color:var(--accent-red); font-weight:700;}
+
+  /* REVEAL ANIM */
+  [data-reveal]{
+    opacity:0; transform:translateY(18px);
+    transition:opacity .6s ease, transform .6s ease;
+  }
+  [data-reveal].in{opacity:1; transform:translateY(0);}
+
+  @media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{animation:none !important; transition:none !important;}
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 880px){
+    .hero .wrap{grid-template-columns:1fr; gap:32px;}
+    .hero-visual{order:-1; min-height:260px;}
+    .services-grid{grid-template-columns:1fr;}
+    .process-track{grid-template-columns:1fr 1fr; row-gap:36px;}
+    .process-track::before{display:none;}
+    .contact-shell{padding:36px 24px;}
+    .contact-grid{grid-template-columns:1fr; gap:36px;}
+    .form-row{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+    section{padding:64px 0;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <img src="logo.png" alt="Unique Ads">
+    </a>
+    <div class="nav-links">
+      <a href="#servicos">Serviços</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#para-quem">Para quem</a>
+    </div>
+    <a href="#contacto" class="btn btn-primary">Fale connosco</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Gestão de tráfego digital · Lagos, Algarve</span>
+      <h1>Mais visibilidade.<br>Mais clientes.<br><span class="grad-text">Mais crescimento.</span></h1>
+      <p class="lead">Gerimos as campanhas de Facebook, Instagram e Google Search do seu negócio — para que apareça às pessoas certas, no momento certo.</p>
+      <div class="hero-ctas">
+        <a href="#contacto" class="btn btn-primary">Pedir uma proposta grátis</a>
+        <a href="#servicos" class="btn btn-ghost">Ver serviços</a>
+      </div>
+      <div class="trust-line">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9333EA" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+        Sem compromissos. Resposta em 24 horas.
+      </div>
+    </div>
+    <div class="hero-visual">
+      <svg class="flight-path" viewBox="0 0 400 400" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="pathGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#F472B6"/>
+            <stop offset="100%" stop-color="#9333EA"/>
+          </linearGradient>
+        </defs>
+        <path d="M 20 320 C 100 280, 60 180, 160 160 S 300 60, 380 40"/>
+      </svg>
+      <img src="logo.png" alt="Unique Ads — beija-flor" style="background:none;">
+    </div>
+  </div>
+</header>
+
+<section id="servicos">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">O que fazemos</span>
+      <h2>Três frentes. Um único objetivo: o seu crescimento.</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card" data-reveal>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 8a4 4 0 1 1-8 0"/><circle cx="17.5" cy="6.5" r="0.6" fill="#fff"/></svg>
+        </div>
+        <h3>Facebook &amp; Instagram Ads</h3>
+        <p>Campanhas visuais que captam atenção nas redes mais usadas em Portugal e transformam seguidores em clientes.</p>
+      </div>
+      <div class="service-card" data-reveal>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        </div>
+        <h3>Google Search Ads</h3>
+        <p>O seu negócio no topo do Google, exatamente quando alguém procura o que oferece.</p>
+      </div>
+      <div class="service-card" data-reveal>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20l9-16H3l9 16z"/><path d="M8 10h8"/></svg>
+        </div>
+        <h3>Gestão de Conteúdo</h3>
+        <p>Publicações, criativos e legendas pensados para a sua marca — sem que tenha de se preocupar com isso.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="como-funciona" class="process">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Como funciona</span>
+      <h2>Do primeiro contacto aos primeiros resultados.</h2>
+    </div>
+    <div class="process-track">
+      <div class="step" data-reveal>
+        <div class="step-num">01</div>
+        <h3>Diagnóstico</h3>
+        <p>Analisamos o seu negócio, o mercado local e a concorrência.</p>
+      </div>
+      <div class="step" data-reveal>
+        <div class="step-num">02</div>
+        <h3>Estratégia</h3>
+        <p>Definimos objetivos, orçamento e público-alvo.</p>
+      </div>
+      <div class="step" data-reveal>
+        <div class="step-num">03</div>
+        <h3>Lançamento</h3>
+        <p>As campanhas entram no ar e são otimizadas em tempo real.</p>
+      </div>
+      <div class="step" data-reveal>
+        <div class="step-num">04</div>
+        <h3>Relatório</h3>
+        <p>Resultados claros, todos os meses, sem jargão técnico.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="para-quem">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Para quem</span>
+      <h2>Qualquer negócio pode crescer com tráfego bem gerido.</h2>
+    </div>
+    <div class="tag-cloud" data-reveal>
+      <span class="tag">Restaurantes</span>
+      <span class="tag">Lojas &amp; E-commerce</span>
+      <span class="tag">Imobiliárias</span>
+      <span class="tag">Clínicas &amp; Saúde</span>
+      <span class="tag">Hotelaria &amp; Turismo</span>
+      <span class="tag">Serviços Locais</span>
+      <span class="tag">Beleza &amp; Bem-estar</span>
+      <span class="tag">Educação</span>
+      <span class="tag">E muitos mais</span>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap">
+    <div class="contact-shell" data-reveal>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <span class="eyebrow">Contacto</span>
+          <h2>Vamos começar?</h2>
+          <p>Preencha o formulário e entramos em contacto em menos de 24 horas.</p>
+          <div class="contact-detail">
+            <div><span>E-mail</span>geral@uniqueads.pt</div>
+            <div><span>WhatsApp</span>+351 000 000 000</div>
+            <div><span>Localização</span>Lagos, Algarve, Portugal</div>
+          </div>
+        </div>
+        <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contacto">
+          <p class="honeypot"><label>Não preencher: <input name="bot-field"></label></p>
+          <div class="form-row">
+            <div>
+              <label for="nome">Nome</label>
+              <input id="nome" name="nome" type="text" placeholder="O seu nome" required>
+            </div>
+            <div>
+              <label for="empresa">Empresa</label>
+              <input id="empresa" name="empresa" type="text" placeholder="Nome do negócio">
+            </div>
+          </div>
+          <div class="form-row">
+            <div>
+              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" placeholder="email@exemplo.pt" required>
+            </div>
+            <div>
+              <label for="telefone">Telefone / WhatsApp</label>
+              <input id="telefone" name="telefone" type="tel" placeholder="+351 ...">
+            </div>
+          </div>
+          <div>
+            <label for="tipo">Tipo de negócio</label>
+            <select id="tipo" name="tipo_de_negocio">
+              <option value="">Selecionar...</option>
+              <option>Restaurante</option>
+              <option>Loja / E-commerce</option>
+              <option>Imobiliária</option>
+              <option>Clínica / Saúde</option>
+              <option>Hotelaria / Turismo</option>
+              <option>Serviços locais</option>
+              <option>Beleza / Bem-estar</option>
+              <option>Outro</option>
+            </select>
+          </div>
+          <div>
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" placeholder="Conte-nos um pouco sobre o seu negócio e objetivos..."></textarea>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary" style="width:100%;">Enviar pedido</button>
+            <p class="form-note">Os seus dados são usados apenas para entrarmos em contacto.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-brand">
+      <img src="logo.png" alt="Unique Ads">
+      <span>© 2026 Unique Ads · Lagos, Portugal</span>
+    </div>
+    <div class="footer-tagline">Seu crescimento começa aqui.</div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+
+  // Draw-in animation for the flight path
+  const path = document.querySelector('.flight-path path');
+  if (path) {
+    const len = path.getTotalLength();
+    path.style.strokeDasharray = len;
+    path.style.strokeDashoffset = len;
+    requestAnimationFrame(() => {
+      path.style.transition = 'stroke-dashoffset 1.8s ease-out';
+      path.style.strokeDashoffset = 0;
+      setTimeout(() => { path.style.strokeDasharray = '6 10'; }, 1800);
+    });
+  }
+</script>
+
+</body>
+</html>
